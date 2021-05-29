@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Build",
+      "setup": "",
+      "run": "make all",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "Task 4.1: Mutual exclusion",
+      "setup": "",
+      "run": "python3 tests/test_mutual_exclusion.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Task 4.2: Scalable lock-based hashmap",
+      "setup": "",
+      "run": "python3 tests/test_lockhashmap.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 10
+    },
+    {
+      "name": "Task 4.3: Lock-free hashmap",
+      "setup": "",
+      "run": "python3 tests/test_lockfreehashmap.py",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 2,
+      "points": 15
+    }
+  ]
+}
