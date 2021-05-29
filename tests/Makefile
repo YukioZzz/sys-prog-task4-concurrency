@@ -1,7 +1,7 @@
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 PYTHON3 ?= python3
-CFLAGS += -g -w -pthread -fpermissive
+CFLAGS += -w -pthread -fpermissive
 CFLAGS += -O2
 HEADERS := ${ROOT_DIR}/../
 CFLAGS += -I$(HEADERS)
@@ -27,17 +27,17 @@ check: $(PROG1) $(PROG2) $(PROG3)
 	$(PYTHON3) ${ROOT_DIR}/test_lockfreehashmap.py
 
 $(PROG1): ${ROOT_DIR}/test_mutual_exclusion.c
-	$(CC) $(CFLAGS) -Og -g -pthread -o $@ $< $(LIBS1)
+	$(CXX) $(CFLAGS) -Og -g -pthread -o $@ $< $(LIBS1)
 
 SRCS = \
         ${ROOT_DIR}/hashmap-driver.c \
         ${ROOT_DIR}/thread.c
 
 $(PROG2): $(SRCS)
-	$(CC) $(CFLAGS) -Og -g -pthread -o $@ $(SRCS) $(LIBS2)
+	$(CXX) $(CFLAGS) -Og -pthread -o $@ $(SRCS) $(LIBS2)
 
 $(PROG3): $(SRCS)
-	$(CC) $(CFLAGS) -Og -g -pthread -o $@ $(SRCS) $(LIBS3)
+	$(CXX) $(CFLAGS) -Og -pthread -o $@ $(SRCS) $(LIBS3)
 
 clean:
 	$(RM) $(OBJS) $(PROG1) $(PROG2) $(PROG3)
